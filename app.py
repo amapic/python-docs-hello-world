@@ -1,5 +1,5 @@
 from flask import Flask
 
-@app.route('/api/meteo/')
+@app.route('/')
 def meteo():
-    return 'tt'
+    return "tt"
