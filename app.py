@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask
 
 @app.route('/api/meteo/')
 def meteo():
