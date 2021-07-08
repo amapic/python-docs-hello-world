@@ -1,6 +1,6 @@
-from flask import Flask, jsonify
+from flask import Flask
+app = Flask(__name__)
 
-@app.route('/a')
-def meteo():
-	print('ee')
-	return "hello"
+@app.route("/")
+def hello():
+    return "Hello, World!"
