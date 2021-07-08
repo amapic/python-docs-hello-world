@@ -43,7 +43,8 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 # CORS(app, support_credentials=True)
 today = dt.today().strftime("%m-%d-%Y")
-csv_today_path = 'C:/Users/Utilisateur/PycharmProjects/montee_en_competence/csv_vaccin/' + today + ".csv"
+# csv_today_path = 'C:/Users/Utilisateur/PycharmProjects/montee_en_competence/csv_vaccin/' + today + ".csv"
+csv_today_path = '/data/bilan/' + today + ".csv"
 if path.exists(csv_today_path):
 	df_vaccin_quotidien = pd.read_csv(csv_today_path)
 
@@ -184,7 +185,9 @@ def make_vaccin_detail():
 		return df_vaccin_detail
 	#le seul truc qui nous manque c'est le cumul par jour par vaccin sur toutes les régions
 
-df_vaccin_detail=make_vaccin_detail()
+df_vaccin_detail=make_vaccin_detail() 
+
+
 # month_options = [{'label': month, 'value': i}
 #                  for (month,i) in enumerate(pd.unique(df_liste_vaccin))]
 
@@ -346,7 +349,6 @@ def load_geojson():
 		# # marker_colors=[choose_color(i) for i in range(len(labels))]
 	# # ))
 	# # return fig
-
 
 
 
